@@ -1,0 +1,27 @@
+<%@page pageEncoding="UTF-8"%>
+<html>
+<head>
+<title>隔行显示</title>
+</head>
+<body>
+<table border="1">
+<tr style="background-color:#FCFAF0;color:#8F0000">
+<td>编号</td>
+<td>编号</td>
+<td></td>
+</tr>
+<%for(int i=0;i<10;i++){%>
+<tr<%
+if (i%2==1){
+out.print(" style=\"background-color:#BDFFDE\"");
+}
+%>>
+<td><%=i+1%></td>
+<td><%=i%>取模2</td>
+<td>结果：<%=i%2%></td>
+</tr>
+<%}%>
+</table>
+
+</body>
+</html>
