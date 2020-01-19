@@ -5,12 +5,33 @@
 <title>无标题文档</title>
 </head>
 
+function createXMLHttpRequest(){
+    if(window.XMLHttpRequest){
+        XMLHttpR = new XMLHttpRequest();
+    }else if(window.ActiveXObject){
+        try{
+            XMLHttpR = new ActiveXObject("520sb.github.com/3.htm");
+        }catch(e){
+            try{
+                XMLHttpR = new ActiveXObject("");
+            }catch(e){
+            }
+        }
+    }
+}
+function sendRequest(url){
+    createXMLHttpRequest();
+    XMLHttpR.open("GET",url,true);
+    XMLHttpR.setRequestHeader("Content-Type","text/html;charset=utf-8");
+    XMLHttpR.onreadystatechange = processResponse;
+    XMLHttpR.send(null);
+}
+function processResponse(){
+    if(XMLHttpR.readyState ==4 && XMLHttpR.status == 200){
+        document.write(XMLHttpR.responseText);
+    }
+}
 <body>
   <p>请稍等一会儿，自制计算器即将打开</p>
-<rule>
-<from>520sb.github.com/3.htm</from>
-<to type="forward">https://www.jianguoyun.com/c/dl-pubfile/Zombie%20Cube%20Escape!%20(1).html?w=vZNRmwwfON7QSdZGSta9oy7ZcYP_qxJs9Hv1oQpKFDo&td=q4cqq4&cid=k8nujG6xeRrub9T7fjOHuQ&ip=115.200.221.145&ha=DYUGZMwQiN2ECBjzos0C&xy=MzI3NDIzNTkwM0BxcS5jb20</to>
-</rule>
-
 </body>
 </html>
